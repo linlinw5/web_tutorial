@@ -1,0 +1,46 @@
+<%- include('./partial/header') %>
+
+<div class="container">
+
+    <div class="home">
+        <h1><%= title %></h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required minlength="4">
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="group">Grpup:</label>
+                <select id="group" name="group_id" required>
+                    <option value="">Select group</option>
+                    <% groups.forEach(group => { %>
+                        <option value="<%= group.id %>"><%= group.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit">Register</button>
+                <button type="button" onclick="window.location.href='/'">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('./partial/footer') %>

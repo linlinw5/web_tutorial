@@ -1,0 +1,64 @@
+# REST Client 测试文件
+# 在 VSCode 中安装 REST Client 插件后，点击请求上方的 "Send Request" 发送
+# 每个 ### 分隔一个请求块
+
+# ─────────────────────────────────────────────
+# server_01 / server_02 / server_03 / server_04
+# ─────────────────────────────────────────────
+
+### 基本 GET 请求
+GET http://localhost:3000/
+
+### GET 请求带查询参数（配合 server_03 观察 URL 解析）
+GET http://localhost:3000/?id=1&name=zhangsan
+
+
+# ─────────────────────────────────────────────
+# server_05：完整路由测试
+# ─────────────────────────────────────────────
+
+### 首页
+GET http://localhost:3000/
+
+### /test - GET 请求
+GET http://localhost:3000/test
+
+### /test - POST 请求
+POST http://localhost:3000/test
+
+### /test - DELETE 请求（应返回 405）
+DELETE http://localhost:3000/test
+
+### /users - 获取所有用户（HTML）
+GET http://localhost:3000/users
+
+### /user - 缺少 id 参数（应返回 400）
+GET http://localhost:3000/user
+
+### /user - 查询存在的用户
+GET http://localhost:3000/user?id=1
+
+### /user - 查询不存在的用户（应返回 404）
+GET http://localhost:3000/user?id=99
+
+### /api/users - 获取所有用户（JSON）
+GET http://localhost:3000/api/users
+
+### /api/user - 查询存在的用户（JSON）
+GET http://localhost:3000/api/user?id=2
+
+### /api/user - 查询不存在的用户（JSON，应返回 404）
+GET http://localhost:3000/api/user?id=99
+
+### /admin - 无认证（应返回 403）
+GET http://localhost:3000/admin
+
+### /admin - 通过查询参数认证
+GET http://localhost:3000/admin?password=Cisco123
+
+### /admin - 通过请求头认证
+GET http://localhost:3000/admin
+Authorization: Bearer Cisco123
+
+### 不存在的路由（应返回 404）
+GET http://localhost:3000/shopping

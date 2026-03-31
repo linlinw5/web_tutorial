@@ -1,0 +1,46 @@
+<%- include('./partial/header.ejs') %>
+<div id="container" class="w-full h-full mx-auto lg:max-w-[1024px] flex flex-col p-4">
+
+    <div><a href="/">&laquo; Back to Home</a></div>
+
+    <!-- 我们设计一个form，为FormData API做被准，在js脚本中用formData API获取整个form的数据 -->
+
+    <div class="flex flex-col gap-4 w-full">
+        <h2 class="py-4 text-xl font-bold"><%= title %></h2>
+        <form id="addBlogForm" class="flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+                <label for="title">Title:</label>
+                <input id="title" type="text" name="title" required class="border py-1 px-2 rounded-md">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required class="border py-1 px-2 rounded-md h-64"></textarea>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="img">Image:</label>
+                <input id="img" type="text" name="img" placeholder="Image URL" class="border py-1 px-2 rounded-md">
+            </div>
+            <div class="flex gap-8">
+                <div>
+                    <label for="published">Published</label>
+                    <input id="published" type="checkbox" name="published" value="published" checked>
+                </div>
+            </div>
+            <div class="flex gap-8">
+                <% tags.forEach(tag => { %>
+                    <div>
+                        <label for="tag_<%=tag.id%>"><%=tag.name%></label>
+                        <input id="tag_<%=tag.id%>" type="checkbox" name="tags[]" value="<%=tag.id%>">
+                    </div>
+                <% }) %>
+            </div>
+
+            <div>
+                <button id="submitButton" type="submit" class="px-4 py-2 bg-green-600 hover:bg-green-500 rounded-md text-white cursor-pointer">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('./partial/footer.ejs') %>

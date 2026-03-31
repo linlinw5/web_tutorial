@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #cca011;
+}
+/* header part */
+
+header {
+  background-color: #333;
+  height: 100px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  height: 100%;
+}
+
+.logo img {
+  max-height: 100%;
+}
+
+/* main part */
+
+main {
+  flex: 1;
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.container img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.home ul {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style-type: none;
+}
+.home img {
+  border-radius: 10px;
+}
+.home ul a {
+  padding: 10px 20px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+.home ul a:hover {
+  background-color: darkblue;
+}
+
+/* footer part */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+.debug {
+  background-color: lightpink;
+  padding: 10px;
+  color: #333;
+}
+
+/* 表单页面 */
+#registerForm,
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* profile 页面 */
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

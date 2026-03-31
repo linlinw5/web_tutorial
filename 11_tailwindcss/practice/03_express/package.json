@@ -1,0 +1,20 @@
+{
+  "name": "03_tailwind_express",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently \"tsx watch ./src/index.ts\" \"npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --watch\"",
+    "build": "tsc",
+    "buildcss": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --minify"
+  },
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.3",
+    "concurrently": "^9.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.14"
+  }
+}

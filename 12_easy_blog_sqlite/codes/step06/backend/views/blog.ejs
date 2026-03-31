@@ -1,0 +1,13 @@
+<%- include('./partial/header.ejs') %>
+    <div id="container" class="w-full h-full mx-auto lg:max-w-[1024px] flex flex-col border border-red-300 p-4">
+        <p class="text-red-500">All tags info:</p>
+        <%= JSON.stringify(tags) %>
+        <hr>
+        <p class="text-red-500">Blog info:</p>
+        <%= JSON.stringify(blog) %>
+        <hr>
+        <p class="text-red-500">This blog related tags info:</p>
+        <%= JSON.stringify(blogTags) %>
+    </div>
+
+<%- include('./partial/footer.ejs') %>

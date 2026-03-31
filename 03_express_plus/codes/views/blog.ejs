@@ -1,0 +1,25 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+    <div class="blogContent">
+        <div><a href="/">« 返回主页</a></div>
+
+        <h1><%= blogById.title %></h1>
+        <div class="authorInfo">
+            <div class="avatar">
+                <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="authorName">
+                <strong><%= blogById.author %></strong>
+            </div>
+            <div class="date"><%= blogById.created_at %></div>
+        </div>
+
+        <div class="mainContent">
+            <div class="imageDiv"><img src="<%= blogById.image %>" alt=""></div>
+            <p><%= blogById.content %></p>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

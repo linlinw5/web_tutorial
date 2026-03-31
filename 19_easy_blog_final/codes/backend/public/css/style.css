@@ -1,0 +1,613 @@
+/* 参考设计：https://www.wix.com/demone2/marketing-blog/blog */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: #cca011;
+}
+/* header part */
+
+header {
+    background-color: #333;
+    height: 100px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.logo {
+    height: 100%;
+}
+
+.logo img{
+    max-height: 100%;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a, .admin a {
+    color: white;
+}
+
+.nav ul li a:hover, .admin a:hover {
+    color: #ffcb22;
+}
+
+.search {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search input {
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search button {
+    height: 100%;
+    padding: 0 10px;
+    background-color: #ffcb22;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin a {
+    margin-left: 20px;
+}
+
+
+/* main part */
+
+main {
+    flex: 1;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    flex: 1;
+}
+
+
+.blogCard {
+    height: 500px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.blogCard .image {
+    flex: 3 0 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.blogCard .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blogCard .content {
+    flex: 1 0 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blogCard .content h2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* 标题最多显示 2 行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 在被截断的文字末尾显示 "..." */
+}
+
+.blogCard .content p:last-child {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 3; /* 描述最多显示 3 行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blogGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    gap: 20px;
+}
+
+.blogGrid .blogCard .image {
+    flex: 1 0 0;
+}
+
+/* 分页器按钮样式 */
+
+.pagination {
+    display: flex;
+    align-items: center;
+}
+.pagination button, .pagination a, .pagination span {
+    text-decoration: none;
+    display: inline-block;
+    font-weight: normal;
+    padding: 7px 12px;
+    border: 1px solid #888;
+    border-right: none;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+}
+
+.pagination .prev {
+    border-radius: 5px 0 0 5px;
+}
+
+.pagination .next {
+    border-radius: 0 5px 5px 0;
+    border-right: 1px solid #888;
+}
+
+.pagination .active {
+    background-color: #ffcb22;
+}
+
+.pagination button:hover, .pagination a:hover {
+    background-color: #cca011;
+    color: white;
+}
+
+.pagination .disabled {
+    color: #666;
+    cursor: not-allowed;
+}
+
+.pagination .disabled:hover {
+    color: #666;
+    background-color: white;
+}
+
+/* footer part */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* byTag 页面 */
+.blogByTagList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blogByTag {
+    height: 180px;
+    flex-direction: row;
+    gap: 10px;
+}
+.blogByTag .image {
+    flex: 1 0 0;
+}
+.blogByTag .content {
+    flex: 3 0 0;
+}
+
+
+/* byBlogId页面 */
+.blogContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.authorInfo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.authorInfo .avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tags {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+.tags li {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.tags li.tag_1 {
+    background-color: lightblue;
+}
+.tags li.tag_2 {
+    background-color: lightseagreen;
+}
+.tags li.tag_3 {
+    background-color: lightcoral;
+}
+.tags li.tag_4 {
+    background-color: lightgray;
+}
+.tags li.tag_5 {
+    background-color: lightpink;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.mainContent .imageDiv {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.mainContent .imageDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.mainContent p {
+    line-height: 1.6;
+}
+
+
+
+/* admin_blogs 页面 */
+.blogList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.blogLine {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    background-color: #dedede;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+.infoDiv {
+    flex: 4 0 0;
+    overflow: hidden;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.infoDiv p {
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* 防止文本换行 */
+}
+.infoDiv h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.buttonDiv {
+    flex: 1 0 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.buttonDiv button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buttonDiv button.deleteButton {
+    background-color: #ff4d4d;
+    color: white;
+}
+.buttonDiv button.deleteButton:hover {
+    background-color: #ff1a1a;
+}
+.buttonDiv button.editButton {
+    background-color: #4d94ff;
+    color: white;
+}
+.buttonDiv button.editButton:hover {
+    background-color: #1a8cff;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* 需要高于其他内容 */
+}
+
+.confirmDiv {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1001;  /* 需要高于遮罩层 */
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.confirmDiv .buttonDiv {
+    flex: 0;
+}
+
+
+/* add blog页面 */
+.formDiv, #addBlogForm, #editBlogForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group.checkbox {
+    flex-direction: row;
+    gap:30px;
+}
+.button-group button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group input[type="text"]{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.form-group input[readonly] {
+    background-color: #f5f5f5;  /* 灰色背景 */
+    color: #666;                /* 较暗的文字颜色 */
+    cursor: not-allowed;        /* 禁止光标 */
+}
+.form-group input[readonly]:focus {
+    outline: none;              /* 移除焦点轮廓 */
+    box-shadow: none;           /* 移除焦点阴影 */
+}
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    height: 400px;
+}
+
+
+
+/* 表单页面 */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.home ul {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+}
+.home img {
+    border-radius: 10px;
+}
+.home ul a {
+    padding: 10px 20px;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.home ul a:hover {
+    background-color: darkblue;
+}
+
+#registerForm, #loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group input, .form-group select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* profile 页面 */
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* admin页面 */
+
+.admin-container {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.admin-container .side-bar {
+    width: 200px;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+}
+
+.admin-container .side-bar-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-container .side-bar-nav ul li {
+    margin-bottom: 10px;
+}
+
+.admin-container .side-bar-nav ul li a {
+    font-weight: bold;
+}
+
+.admin-container .right-content {
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* admin user页面 */
+.user-table {
+    width: 100%;
+}
+.user-table th, .user-table td {
+    padding: 8px 5px;
+    text-align: left;
+    border: none;
+    border-radius: 5px;
+}
+.user-table th {
+    background-color: #f7e374;
+}
+.user-table tr:nth-child(even) {
+    background-color: #e4e4e4;
+}
+.user-table tr:hover {
+    background-color: #d4d4d4;
+}
+.user-table .action-buttons {
+    display: flex;
+    gap: 10px;
+}
+.user-table .action-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.user-table .action-buttons button.edit-button {
+    background-color: #4CAF50;
+    color: white;
+}
+.user-table .action-buttons button.delete-button {
+    background-color: #f44336;
+    color: white;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- 引入编译后的 CSS（注意：Express 托管的静态文件用绝对路径 /css/output.css） -->
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+    <!-- 用 Tailwind 工具类为下面的元素添加样式 -->
+
+    <!-- 1. 标题：2xl 字号，红色文字 -->
+    <h1><%= title %></h1>
+
+    <!-- 2. 段落：红色文字，浅绿色背景 -->
+    <p>Hello from EJS + Tailwind!</p>
+
+    <!-- 3. 在 input.css 中定义 .btn-primary，在这里使用 -->
+    <button id="btn">点我</button>
+
+    <script>
+        const btn = document.getElementById('btn');
+        btn?.addEventListener('click', () => {
+            alert('Button clicked!');
+        });
+    </script>
+</body>
+</html>

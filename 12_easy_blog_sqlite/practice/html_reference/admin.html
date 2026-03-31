@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title><%= title %></title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="./images/logo.png" alt="logo" />
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./tag.html">Technical</a></li>
+                    <li><a href="./tag.html">Education</a></li>
+                    <li><a href="./tag.html">Life</a></li>
+                    <li><a href="./tag.html">Food</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" name="query" placeholder="Search..." />
+                <button>
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <div class="admin">
+                    <a href="./admin.html">Admin</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="container" class="container">
+                <div class="pagination">
+                    <button class="prev disabled" disabled="">&lt;&lt;</button>
+                    <button class="page active">1</button>
+                    <button class="page">2</button>
+                    <button class="next">&gt;&gt;</button>
+                </div>
+                <button class="addButton" onclick="addBtn()">Add New Blog</button>
+                <div class="blogList">
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blogLine">
+                        <div class="infoDiv">
+                            <p>2025-06-21</p>
+                            <h3><a href="./blog.html">Insights emerge when we reflect.</a></h3>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="deleteButton">Delete</button>
+                            <button class="editButton">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>©2025 by Ada. Powered by Express.js</p>
+        </footer>
+
+        <script>
+            function addBtn() {
+                window.location.href = "./add.html";
+            }
+        </script>
+    </body>
+</html>

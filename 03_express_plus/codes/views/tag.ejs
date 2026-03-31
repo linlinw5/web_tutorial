@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+    <div class="blogByTagList">
+        <% for (let item of blogsByTag) { %>
+            <div class="blogCard blogByTag">
+                <div class="image"><img src="<%= item.image %>" alt=""></div>
+                <div class="content">
+                    <p><%= item.created_at %></p>
+                    <h2><a href="/blog?id=<%= item.id %>"><%= item.title %></a></h2>
+                    <hr>
+                    <p>Created By: <%= item.author %></p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

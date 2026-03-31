@@ -1,0 +1,40 @@
+<div class="formDiv">
+    <h2><%= title %></h2>
+    <form id="editBlogForm">
+        <div class="form-group">
+            <label for="blogId">Id:</label>
+            <input id="blogId" type="text" name="blogId" value="<%= blog.id %>" readonly>
+            <!-- blog.id这里只读，也可以display: none，主要是在表单提交的时候需要用到 -->
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input id="title" type="text" name="title" value="<%= blog.title %>" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" required><%= blog.content %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="img">Image:</label>
+            <input id="img" type="text" name="img" value="<%= blog.img %>" placeholder="Image URL">
+        </div>
+        <div class="form-group checkbox">
+            <div>
+                <label for="published">Published</label>
+                <input id="published" type="checkbox" name="published" value="published" <%= blog.published ? 'checked' : '' %>>
+            </div>
+        </div>
+        <div class="form-group checkbox">
+            <% tags.forEach(tag => { %>
+                <div>
+                    <label for="tag_<%=tag.id%>"><%=tag.name%></label>
+                    <input id="tag_<%=tag.id%>" type="checkbox" name="tags[]" value="<%=tag.id%>" <%= blog.tags.includes(tag.id) ? 'checked' : '' %>>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="button-group">
+            <button id="submitButton" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

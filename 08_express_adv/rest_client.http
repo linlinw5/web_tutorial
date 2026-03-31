@@ -1,0 +1,70 @@
+### 变量
+@baseUrl = http://localhost:3000
+@userId = 1
+
+
+### 首页
+GET {{baseUrl}}
+
+
+### ===== 用户接口 =====
+
+### 获取所有用户
+GET {{baseUrl}}/api/users
+
+
+### 获取单个用户
+GET {{baseUrl}}/api/users/{{userId}}
+
+
+### 获取不存在的用户（期望 404）
+GET {{baseUrl}}/api/users/999
+
+
+### 新增用户 - JSON 格式
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "name": "Ada",
+    "email": "ada@example.com"
+}
+
+
+### 新增用户 - www-form-urlencoded 格式
+POST {{baseUrl}}/api/users
+Content-Type: application/x-www-form-urlencoded
+
+name=Bob&email=bob@example.com
+
+
+### 修改用户
+PUT {{baseUrl}}/api/users/{{userId}}
+Content-Type: application/json
+
+{
+    "name": "Tom Updated",
+    "email": "tom_new@example.com"
+}
+
+
+### 修改不存在的用户（期望 404）
+PUT {{baseUrl}}/api/users/999
+Content-Type: application/json
+
+{
+    "name": "Ghost",
+    "email": "ghost@example.com"
+}
+
+
+### 删除用户
+DELETE {{baseUrl}}/api/users/{{userId}}
+
+
+### 删除不存在的用户（期望 404）
+DELETE {{baseUrl}}/api/users/999
+
+
+### 访问不存在的路由（期望 404）
+GET {{baseUrl}}/api/nonexistent

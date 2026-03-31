@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CLI 练习</title>
+    <!-- 引入编译后的 CSS（先运行 npm run dev 生成） -->
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+    <!--
+        练习目标：用 Tailwind 工具类实现以下布局
+
+        1. body 使用 flex 纵向布局，最小高度撑满屏幕
+        2. header：绿色背景，白色文字，内边距 16px
+           - 标题在手机上 text-sm，中屏以上 text-xl
+        3. 中间区域：flex 横向布局，撑满剩余空间
+           - 左侧 aside：宽度固定 256px，黄色背景，竖向导航菜单
+           - 右侧 main：flex-1，内边距 16px，放一些内容卡片
+        4. footer：深灰色背景，白色文字，居中
+        5. 在 input.css 中用 @apply 定义 .btn-primary，并在页面中使用
+    -->
+
+    <header>
+        <h1>我的网站</h1>
+    </header>
+
+    <div>
+        <aside>
+            <nav>
+                <a href="#">首页</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </aside>
+
+        <main>
+            <h2>主要内容区域</h2>
+            <p>在这里放置内容。</p>
+            <button>普通按钮</button>
+            <button class="btn-primary">自定义按钮</button>
+        </main>
+    </div>
+
+    <footer>
+        <p>版权所有 &copy; 2024</p>
+    </footer>
+</body>
+</html>

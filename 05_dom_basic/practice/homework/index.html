@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 练习</title>
+    <style>
+        body > div {
+            border: 1px solid red;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        body > div > p {
+            font-weight: bold;
+            color: blue;
+        }
+
+        #list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            cursor: pointer;
+        }
+        #list li {
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            flex: 1;
+        }
+        .active {
+            background-color: yellow;
+            border-bottom: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM 练习题</h1>
+
+    <div>
+        <p>第一题：显示和隐藏密码</p>
+        <div>
+            <label for="username">用户名：</label>
+            <input type="text" id="username" />
+        </div>
+        <div>
+            <label for="password">密码：</label>
+            <input type="password" id="password" />
+        </div>
+        <button id="btn1">显示/隐藏密码</button>
+    </div>
+
+    <div>
+        <p>第二题：获取输入框内的值</p>
+        <input type="text" id="input1" placeholder="请输入内容" />
+        <button id="btn2">获取输入值</button>
+    </div>
+
+    <div>
+        <p>第三题：点击切换 Tab 样式</p>
+        <ul id="list">
+            <li class="active">正在热播</li>
+            <li>即将上映</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>第四题：渲染电影列表</p>
+        <button id="btn4">显示电影列表</button>
+    </div>
+
+    <div>
+        <p>第五题：购物清单（全选 + 提交）</p>
+        <label for="all">全选</label>
+        <input type="checkbox" id="all" />
+        <ul id="shopping-list">
+            <li><input type="checkbox" value="apple" checked>苹果</li>
+            <li><input type="checkbox" value="banana">香蕉</li>
+            <li><input type="checkbox" value="orange">橘子</li>
+            <li><input type="checkbox" value="grape">葡萄</li>
+        </ul>
+        <button id="btn5">提交</button>
+    </div>
+
+    <div>
+        <p>第六题：学生列表的渲染与删除</p>
+        <button id="btn6">innerHTML 写法</button>
+        <button id="btn7">createElement 写法</button>
+    </div>
+
+    <div>
+        <h2>结果显示区：</h2>
+        <button id="btn3">清空</button>
+        <hr>
+        <div id="result"></div>
+    </div>
+
+    <script src="./dist/script.js"></script>
+</body>
+</html>

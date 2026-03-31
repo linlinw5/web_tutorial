@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理系统</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>用户管理系统</h1>
+            <p>一个简易的用户管理平台</p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" id="loadBtn">刷新用户列表</button>
+            <button class="btn btn-secondary" id="addUserBtn">新增用户</button>
+        </div>
+
+        <div class="main-section">
+            <h2 class="section-title">用户列表</h2>
+            <div class="user-grid" id="userGrid"></div>
+        </div>
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <script src="../dist/script.js"></script>
+</body>
+</html>

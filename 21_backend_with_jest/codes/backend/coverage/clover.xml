@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1774666701648" clover="3.2.0">
+  <project timestamp="1774666701648" name="All files">
+    <metrics statements="126" coveredstatements="124" conditionals="29" coveredconditionals="29" methods="17" coveredmethods="17" elements="172" coveredelements="170" complexity="0" loc="126" ncloc="126" packages="1" files="3" classes="3"/>
+    <file name="ConnectionManager.ts" path="D:\code\bootcamp_ag\final\21_banend_with_jest\codes\backend\src\db\ConnectionManager.ts">
+      <metrics statements="24" coveredstatements="22" conditionals="7" coveredconditionals="7" methods="5" coveredmethods="5"/>
+      <line num="1" count="3" type="stmt"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="15" count="5" type="stmt"/>
+      <line num="20" count="25" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="5" type="stmt"/>
+      <line num="23" count="25" type="stmt"/>
+      <line num="27" count="54" type="stmt"/>
+      <line num="28" count="54" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="14" type="stmt"/>
+      <line num="30" count="14" type="stmt"/>
+      <line num="35" count="14" type="stmt"/>
+      <line num="37" count="54" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="44" count="21" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="14" type="stmt"/>
+      <line num="46" count="14" type="stmt"/>
+      <line num="52" count="8" type="stmt"/>
+      <line num="53" count="8" type="stmt"/>
+      <line num="54" count="8" type="stmt"/>
+      <line num="96" count="0" type="stmt"/>
+    </file>
+    <file name="blogs.ts" path="D:\code\bootcamp_ag\final\21_banend_with_jest\codes\backend\src\db\blogs.ts">
+      <metrics statements="72" coveredstatements="72" conditionals="18" coveredconditionals="18" methods="8" coveredmethods="8"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="3" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="35" count="3" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="44" count="3" type="stmt"/>
+      <line num="45" count="3" type="stmt"/>
+      <line num="46" count="3" type="stmt"/>
+      <line num="54" count="3" type="stmt"/>
+      <line num="55" count="2" type="stmt"/>
+      <line num="58" count="2" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+      <line num="73" count="4" type="stmt"/>
+      <line num="75" count="4" type="stmt"/>
+      <line num="76" count="4" type="stmt"/>
+      <line num="79" count="4" type="stmt"/>
+      <line num="82" count="4" type="stmt"/>
+      <line num="91" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="92" count="2" type="stmt"/>
+      <line num="93" count="3" type="stmt"/>
+      <line num="95" count="2" type="stmt"/>
+      <line num="99" count="2" type="stmt"/>
+      <line num="101" count="2" type="stmt"/>
+      <line num="104" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="105" count="2" type="stmt"/>
+      <line num="106" count="2" type="stmt"/>
+      <line num="110" count="1" type="stmt"/>
+      <line num="119" count="5" type="stmt"/>
+      <line num="121" count="5" type="stmt"/>
+      <line num="122" count="5" type="stmt"/>
+      <line num="125" count="5" type="stmt"/>
+      <line num="126" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="127" count="1" type="stmt"/>
+      <line num="131" count="3" type="stmt"/>
+      <line num="134" count="3" type="stmt"/>
+      <line num="135" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="138" count="3" type="stmt"/>
+      <line num="140" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="141" count="3" type="stmt"/>
+      <line num="142" count="2" type="stmt"/>
+      <line num="146" count="2" type="stmt"/>
+      <line num="148" count="2" type="stmt"/>
+      <line num="151" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="152" count="1" type="stmt"/>
+      <line num="153" count="1" type="stmt"/>
+      <line num="157" count="1" type="stmt"/>
+      <line num="158" count="3" type="stmt"/>
+      <line num="159" count="3" type="stmt"/>
+      <line num="160" count="3" type="stmt"/>
+      <line num="161" count="2" type="cond" truecount="4" falsecount="0"/>
+      <line num="162" count="1" type="stmt"/>
+      <line num="164" count="1" type="stmt"/>
+      <line num="167" count="1" type="stmt"/>
+      <line num="168" count="1" type="stmt"/>
+    </file>
+    <file name="tags.ts" path="D:\code\bootcamp_ag\final\21_banend_with_jest\codes\backend\src\db\tags.ts">
+      <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="9" count="8" type="stmt"/>
+      <line num="10" count="8" type="stmt"/>
+      <line num="11" count="8" type="stmt"/>
+      <line num="13" count="7" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="21" count="4" type="stmt"/>
+      <line num="22" count="4" type="stmt"/>
+      <line num="23" count="4" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="42" count="9" type="stmt"/>
+      <line num="44" count="9" type="cond" truecount="4" falsecount="0"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="48" count="8" type="stmt"/>
+      <line num="49" count="7" type="stmt"/>
+      <line num="50" count="7" type="stmt"/>
+      <line num="54" count="1" type="stmt"/>
+      <line num="55" count="17" type="stmt"/>
+      <line num="56" count="17" type="stmt"/>
+    </file>
+  </project>
+</coverage>

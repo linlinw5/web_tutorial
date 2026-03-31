@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSR Demo</title>
+</head>
+<body>
+    <div id="title"></div>
+    <script>
+        window.alert("hello world");
+
+        const title = window.document.getElementById("title");
+        title.innerHTML = "<h1>Hello World!</h1>";
+        title.style.color = "red";
+        title.style.fontSize = "100px";
+    </script>
+</body>
+</html>

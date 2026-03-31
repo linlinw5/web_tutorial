@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API 示例</title>
+    <style>
+        .section {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetch API 示例</h1>
+    <p>本案例从 <a href="http://localhost:3000" target="_blank">Mock API Server</a> 获取用户数据。请先启动 <code>00_mock_api</code>。</p>
+
+    <button id="loadBtn">加载用户列表</button>
+
+    <div class="section">
+        <p>HTML 原生表单提交（application/x-www-form-urlencoded）：</p>
+        <form action="http://localhost:3000/api/users" method="POST">
+            <input type="text" name="name" placeholder="用户名">
+            <input type="text" name="email" placeholder="邮箱">
+            <button type="submit">新增用户</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <p>Fetch 提交（两种请求体格式）：</p>
+        <input type="text" id="username" placeholder="用户名">
+        <input type="text" id="email" placeholder="邮箱">
+        <button id="addJSON">新增用户 - JSON</button>
+        <button id="addWWW">新增用户 - www-form</button>
+    </div>
+
+    <div class="section">
+        <p>用户列表：</p>
+        <ul id="userList"></ul>
+    </div>
+
+    <div class="section">
+        <p>系统消息：</p>
+        <div id="message"></div>
+    </div>
+
+    <script src="./dist/script.js"></script>
+</body>
+</html>

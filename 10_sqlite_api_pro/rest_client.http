@@ -1,0 +1,90 @@
+### 变量
+@baseUrl = http://localhost:3000
+@userId = 1
+
+
+### 首页
+GET {{baseUrl}}
+
+
+### ===== 用户 API =====
+
+### 查询用户列表（第 1 页，每页 3 条）
+GET {{baseUrl}}/api/users?limit=3&offset=0
+
+### 查询用户列表（第 2 页）
+GET {{baseUrl}}/api/users?limit=3&offset=3
+
+### 查询单个用户（JOIN 返回 group_name）
+GET {{baseUrl}}/api/users/{{userId}}
+
+### 查询不存在的用户（期望 404）
+GET {{baseUrl}}/api/users/999
+
+
+### 新增用户
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "username": "zara",
+    "email": "zara@example.com",
+    "password": "zara123",
+    "group_id": 2
+}
+
+
+### 新增用户（缺少必填字段，期望 400）
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "username": "incomplete"
+}
+
+
+### 修改密码
+PATCH {{baseUrl}}/api/users/{{userId}}
+Content-Type: application/json
+
+{
+    "password": "newpassword123"
+}
+
+
+### 修改不存在用户的密码（期望 404）
+PATCH {{baseUrl}}/api/users/999
+Content-Type: application/json
+
+{
+    "password": "ghost"
+}
+
+
+### 删除用户
+DELETE {{baseUrl}}/api/users/{{userId}}
+
+### 删除不存在的用户（期望 404）
+DELETE {{baseUrl}}/api/users/999
+
+
+### ===== 博客 API =====
+
+### 查询博客列表（占位接口）
+GET {{baseUrl}}/api/blogs
+
+
+### ===== Web 页面 =====
+
+### SSR 用户列表页（第 1 页）
+GET {{baseUrl}}/users?limit=3&offset=0
+
+### SSR 用户列表页（第 2 页）
+GET {{baseUrl}}/users?limit=3&offset=3
+
+### CSR 用户列表页（客户端渲染）
+GET {{baseUrl}}/users/js
+
+
+### 访问不存在的路由（期望 404）
+GET {{baseUrl}}/api/nonexistent

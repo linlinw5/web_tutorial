@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>新增用户 - 用户管理系统</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-secondary" onclick="goHome()">返回首页</button>
+
+        <div class="header">
+            <h1>新增用户</h1>
+            <p>填写用户信息并提交，采用 JSON Body 方式发送请求</p>
+        </div>
+
+        <div class="main-section">
+            <div class="form-group">
+                <label for="username">用户名：</label>
+                <input type="text" id="username" class="form-input" placeholder="请输入用户名" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">邮箱：</label>
+                <input type="email" id="email" class="form-input" placeholder="请输入邮箱地址" required>
+            </div>
+            <button class="btn btn-primary" id="submitAdd">提交</button>
+        </div>
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <script src="../dist/script.js"></script>
+</body>
+</html>

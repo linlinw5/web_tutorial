@@ -1,0 +1,27 @@
+<%- include('./partial/header') %>
+
+<div class="container">
+    <div class="admin-container">
+        <div class="side-bar">
+            <nav class="side-bar-nav">
+                <ul>
+                    <li><a href="/auth/profile">View My Profile</a></li>
+                    <li><a href="/editor/blogs">Manage My Blogs</a></li>
+                    <li><a href="/editor/blogs/add">Add a New Blog</a></li>
+                    <% if (user.group_id === 1) { %>
+                        <li><a href="/admin/blogs">Manage All Blogs</a></li>
+                        <li><a href="/admin/users">Manage Users</a></li>
+                    <% } %>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="right-content">
+            <%- locals.content_ejs ? include(`./partial/${content_ejs}`) : '' %>
+        </div>
+
+    </div>
+</div>
+
+<%- include('./partial/footer') %>

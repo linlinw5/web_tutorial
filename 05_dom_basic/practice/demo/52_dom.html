@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 顶层节点与子节点</title>
+    <style>
+        .p2 span { color: red; }
+        .item { font-weight: bold; list-style-type: square; color: green; }
+        .item a { text-decoration: none; color: green; }
+        .active { color: red; }
+        .active a { color: red; }
+    </style>
+</head>
+<body>
+    <div id="banner"><h1>hello world!</h1></div>
+    <div id="content">
+        <p class="p1">这是一个段落</p>
+        <p class="p2">这是另一个段落，<span>这是特殊的文字</span></p>
+        <ul>
+            <li class="item"><a href="#">苹果</a></li>
+            <li class="item"><a href="#">香蕉</a></li>
+            <li class="item"><a href="#">葡萄</a></li>
+        </ul>
+        <button id="btn1">按钮1</button>
+        <button id="btn2">按钮2</button>
+        <button id="btn3" onclick="handleClick('hello world')">按钮3</button>
+        <hr>
+        <input type="text" id="input1" value="abcde">
+    </div>
+    <script src="./dist/52_dom.js"></script>
+</body>
+</html>

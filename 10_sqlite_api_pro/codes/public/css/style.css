@@ -1,0 +1,27 @@
+body {
+    background-color: bisque;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid steelblue;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}

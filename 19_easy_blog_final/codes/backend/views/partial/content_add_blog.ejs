@@ -1,0 +1,35 @@
+<div class="formDiv">
+    <h2><%= title %></h2>
+    <form id="addBlogForm">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input id="title" type="text" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="img">Image:</label>
+            <input id="img" type="text" name="img" placeholder="Image URL">
+        </div>
+        <div class="form-group checkbox">
+            <div>
+                <label for="published">Published</label>
+                <input id="published" type="checkbox" name="published" value="published" checked>
+            </div>
+        </div>
+        <div class="form-group checkbox">
+            <% tags.forEach(tag => { %>
+                <div>
+                    <label for="tag_<%=tag.id%>"><%=tag.name%></label>
+                    <input id="tag_<%=tag.id%>" type="checkbox" name="tags[]" value="<%=tag.id%>">
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="button-group">
+            <button id="submitButton" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

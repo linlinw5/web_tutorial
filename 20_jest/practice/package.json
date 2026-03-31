@@ -1,0 +1,13 @@
+{
+  "name": "20_jest_practice",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.4"
+  }
+}

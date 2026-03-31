@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #bbb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#myCanvas {
+    border: 5px solid lightgreen;
+    /* 对于canvas元素，css无法改变其分辨率，只能改变其显示尺寸
+       Canvas 的默认分辨率是 300×150；
+       如果在CSS中定义width和height，只是把这个 300×150 的画布拉伸显示为你指定的尺寸
+       结果就是图像变形、失真
+    */
+}
+
+table {
+    margin-top: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+table td, th {
+    padding: 10px;
+}
