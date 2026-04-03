@@ -1,0 +1,94 @@
+@baseUrl = http://localhost:3000
+
+### ──────────────────────────────────────
+### Register API
+### ──────────────────────────────────────
+
+### Register admin user (group_id: 1 = admin)
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "cisco123",
+    "email": "admin@example.com",
+    "group_id": 1
+}
+
+### Register regular user (group_id: 3 = user)
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "jack",
+    "password": "cisco123",
+    "email": "jack@example.com",
+    "group_id": 3
+}
+
+### Register failure: username already exists (expect 500)
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "cisco123",
+    "email": "admin2@example.com",
+    "group_id": 1
+}
+
+### Register failure: missing required fields (expect 400)
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "bob"
+}
+
+### ──────────────────────────────────────
+### Login API
+### ──────────────────────────────────────
+
+### Login success (admin)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "cisco123"
+}
+
+### Login success (regular user)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "jack",
+    "password": "cisco123"
+}
+
+### Login failure: wrong password (expect 401)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "wrongpassword"
+}
+
+### Login failure: user does not exist (expect 401)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "nobody",
+    "password": "cisco123"
+}
+
+### Login failure: missing required fields (expect 400)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin"
+}

@@ -1,0 +1,72 @@
+### Variables
+@baseUrl = http://localhost:3000
+@userId = 1
+
+
+### Home
+GET {{baseUrl}}
+
+
+### ===== User API =====
+
+### Get user list (default page 1, 3 items per page)
+GET {{baseUrl}}/api/users
+
+### Get user list (page 2, 3 items per page)
+GET {{baseUrl}}/api/users?page=2&limit=3
+
+### Get single user (JOIN returns group_name)
+GET {{baseUrl}}/api/users/{{userId}}
+
+### Get non-existent user (expect 404)
+GET {{baseUrl}}/api/users/999
+
+
+### Create user
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "username": "zara",
+    "email": "zara@example.com",
+    "password": "zara123",
+    "group_id": 2
+}
+
+
+### Create user (missing required fields, expect 400)
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "username": "incomplete"
+}
+
+
+### Update password
+PATCH {{baseUrl}}/api/users/{{userId}}
+Content-Type: application/json
+
+{
+    "password": "newpassword123"
+}
+
+
+### Update password for non-existent user (expect 404)
+PATCH {{baseUrl}}/api/users/999
+Content-Type: application/json
+
+{
+    "password": "ghost"
+}
+
+
+### Delete user
+DELETE {{baseUrl}}/api/users/{{userId}}
+
+### Delete non-existent user (expect 404)
+DELETE {{baseUrl}}/api/users/999
+
+
+### Access non-existent route (expect 404)
+GET {{baseUrl}}/api/nonexistent

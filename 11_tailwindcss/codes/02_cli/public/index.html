@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body class="flex flex-col min-h-screen w-full lg:max-w-7xl xl:mx-auto">
+    <header class="bg-green-700 text-white p-4">
+      <h1 class="text-sm md:text-xl font-bold">My Website</h1>
+    </header>
+
+    <div class="flex flex-1">
+      <aside class="w-64 bg-amber-300 border-r border-red-500 p-4">
+        <nav class="flex flex-col gap-4">
+          <a href="#" class="block px-2 py-1 rounded hover:bg-blue-50">Home</a>
+          <a href="#" class="block px-2 py-1 rounded hover:bg-blue-50">About Us</a>
+        </nav>
+      </aside>
+
+      <main class="flex-1 p-4">
+        <h2 class="text-lg font-semibold mb-4">Main Content Area</h2>
+        <p class="mb-2">This is the main content display area.</p>
+        <p class="mb-2">You can place articles, images, or tables here.</p>
+        <div class="mt-4 p-4 border border-red-700 bg-red-50 rounded-lg">
+          <p class="text-red-700">This is a small content block.</p>
+        </div>
+
+        <div class="flex w-full overflow-hidden my-4">
+          <div class="grow-0 shrink-0 basis-1/3 md:basis-1/6 p-4 text-center bg-red-300">1</div>
+          <div class="grow-0 shrink-0 basis-1/3 md:basis-1/6 p-4 text-center bg-blue-300">2</div>
+          <div class="grow-0 shrink-0 basis-1/3 md:basis-1/6 p-4 text-center bg-green-300">3</div>
+          <div class="grow-0 shrink-0 basis-1/3 md:basis-1/6 p-4 text-center bg-yellow-300">4</div>
+          <div class="grow-0 shrink-0 basis-1/3 md:basis-1/6 p-4 text-center bg-purple-300">5</div>
+          <div class="grow-0 shrink-0 basis-1/3 md:basis-1/6 p-4 text-center bg-pink-300">6</div>
+        </div>
+
+        <div class="flex w-full overflow-hidden my-4">
+          <div class="grow-1 p-4 text-center bg-red-300">1</div>
+          <div class="grow-2 p-4 text-center bg-blue-300">2</div>
+          <div class="grow-1 p-4 text-center bg-green-300">3</div>
+        </div>
+
+        <button class="py-2 px-4 bg-blue-700 hover:bg-blue-500 text-white rounded cursor-pointer">Click Me</button>
+        <button class="btn-primary">New Button</button>
+        <p class="text-brand-primary bg-brand-secondary">Test Custom Colors</p>
+      </main>
+    </div>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+      <p>All Rights Reserved &copy; 2024</p>
+    </footer>
+  </body>
+</html>

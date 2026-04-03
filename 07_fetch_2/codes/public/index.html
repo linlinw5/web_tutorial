@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management System</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>User Management System</h1>
+        <p>A simple user management platform</p>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="loadBtn">Refresh User List</button>
+        <button class="btn btn-secondary" id="addUserBtn">Add User</button>
+      </div>
+
+      <div class="main-section">
+        <h2 class="section-title">User List</h2>
+        <div class="user-grid" id="userGrid"></div>
+      </div>
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <script src="../dist/script.js"></script>
+  </body>
+</html>

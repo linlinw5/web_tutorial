@@ -1,0 +1,13 @@
+    </main>
+
+    <footer>
+        <div class="debug">
+            <p><%= user ? JSON.stringify(user) : ' no user information in req.session currently ' %></p>
+        </div>
+    </footer>
+
+    <% if (locals.script_name) { %>
+        <script type="module" src="/js/<%= script_name %>"></script>
+    <% } %>
+</body>
+</html>

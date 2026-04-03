@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+    <style>
+      body > div {
+        border: 1px solid red;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      body > div > p {
+        font-weight: bold;
+        color: blue;
+      }
+
+      #list {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        cursor: pointer;
+      }
+      #list li {
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        flex: 1;
+      }
+      .active {
+        background-color: yellow;
+        border-bottom: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Exercises</h1>
+
+    <div>
+      <p>Task 1: Show and hide password</p>
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+      </div>
+      <button id="btn1">Show/Hide Password</button>
+    </div>
+
+    <div>
+      <p>Task 2: Get the value from the input box</p>
+      <input type="text" id="input1" placeholder="Please enter content" />
+      <button id="btn2">Get Input Value</button>
+    </div>
+
+    <div>
+      <p>Task 3: Click to switch tab style</p>
+      <ul id="list">
+        <li class="active">Now Playing</li>
+        <li>Coming Soon</li>
+      </ul>
+    </div>
+
+    <div>
+      <p>Task 4: Render movie list</p>
+      <button id="btn4">Show Movie List</button>
+    </div>
+
+    <div>
+      <p>Task 5: Shopping list (Select all + Submit)</p>
+      <label for="all">Select All</label>
+      <input type="checkbox" id="all" />
+      <ul id="shopping-list">
+        <li><input type="checkbox" value="apple" checked />Apple</li>
+        <li><input type="checkbox" value="banana" />Banana</li>
+        <li><input type="checkbox" value="orange" />Orange</li>
+        <li><input type="checkbox" value="grape" />Grape</li>
+      </ul>
+      <button id="btn5">Submit</button>
+    </div>
+
+    <div>
+      <p>Task 6: Render and delete student list</p>
+      <button id="btn6">innerHTML Approach</button>
+      <button id="btn7">createElement Approach</button>
+    </div>
+
+    <div>
+      <h2>Result Area:</h2>
+      <button id="btn3">Clear</button>
+      <hr />
+      <div id="result"></div>
+    </div>
+
+    <script src="./dist/script.js"></script>
+  </body>
+</html>

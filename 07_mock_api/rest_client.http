@@ -1,0 +1,76 @@
+### Variables
+@baseUrl = http://localhost:3000
+@userId = 1
+
+
+### Home page (API documentation)
+GET {{baseUrl}}
+
+
+### ===== User API =====
+
+### Get all users
+GET {{baseUrl}}/api/users
+
+
+### Get a single user
+GET {{baseUrl}}/api/users/{{userId}}
+
+
+### Get a non-existent user (expect 404)
+GET {{baseUrl}}/api/users/999
+
+
+### Create user - JSON format
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+    "name": "Ada",
+    "email": "ada@example.com"
+}
+
+
+### Create user - www-form-urlencoded format
+POST {{baseUrl}}/api/users
+Content-Type: application/x-www-form-urlencoded
+
+name=Bob&email=bob@example.com
+
+
+### Update user
+PUT {{baseUrl}}/api/users/{{userId}}
+Content-Type: application/json
+
+{
+    "name": "Tom Updated",
+    "email": "tom_new@example.com"
+}
+
+
+### Update a non-existent user (expect 404)
+PUT {{baseUrl}}/api/users/999
+Content-Type: application/json
+
+{
+    "name": "Ghost",
+    "email": "ghost@example.com"
+}
+
+
+### Delete user
+DELETE {{baseUrl}}/api/users/{{userId}}
+
+
+### Delete a non-existent user (expect 404)
+DELETE {{baseUrl}}/api/users/999
+
+
+### ===== Utility API =====
+
+### Reset data to initial state
+GET {{baseUrl}}/reset
+
+
+### Access a non-existent route (expect 404)
+GET {{baseUrl}}/api/nonexistent

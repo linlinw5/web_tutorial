@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+
+<div id="container" class="container">
+  <h1><%= title %></h1>
+  <p>
+    This is the admin page. Only logged-in users can access this page. If you see this, it means you have successfully
+    logged in and have access to protected routes!
+  </p>
+  <div class="button-group">
+    <button onclick="window.location.href = '/'">Back to Home</button>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

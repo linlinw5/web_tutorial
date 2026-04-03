@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.5 Node Creation and Removal</title>
+    <style>
+      .p2 span {
+        color: red;
+      }
+      .item {
+        font-weight: bold;
+        list-style-type: square;
+        color: green;
+      }
+      .item a {
+        text-decoration: none;
+        color: green;
+      }
+      .active {
+        color: red;
+      }
+      .active a {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner"><h1>hello world!</h1></div>
+    <div id="content">
+      <p class="p1">This is a paragraph</p>
+      <p class="p2">This is another paragraph, <span>this is special text</span></p>
+      <ul>
+        <li class="item"><a href="#">Apple</a></li>
+        <li class="item"><a href="#">Banana</a></li>
+        <li class="item"><a href="#">Grape</a></li>
+      </ul>
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <button id="btn3" onclick="handleClick('hello world')">Button 3</button>
+      <hr />
+      <input type="text" id="input1" value="abcde" />
+    </div>
+    <script src="./dist/55_dom.js"></script>
+  </body>
+</html>

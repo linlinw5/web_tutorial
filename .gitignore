@@ -1,0 +1,7 @@
+# General
+node_modules/
+dist/
+.DS_Store
+*.pem
+*.log
+*.tsbuildinfo

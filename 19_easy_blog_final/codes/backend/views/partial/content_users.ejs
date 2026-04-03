@@ -1,0 +1,61 @@
+<h1><%= title %></h1>
+
+<table class="user-table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>User_ID</th>
+            <th>Email</th>
+            <th>Group Name</th>
+            <th>Provider</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (locals.data && data.length > 0) { %>
+            <% data.forEach(user => { %>
+                <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.id %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.groupname %></td>
+                    <td><%= user.provider || 'N/A' %></td>
+                    <td class="action-buttons">
+                        <button class="delete-button" data-user-id="<%= user.id %>">Delete</button>
+                        <button class="edit-button" data-user-id="<%= user.id %>">ChangePwd</button>
+                    </td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+            <tr>
+                <td colspan="6">No users found.</td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <!-- 上一页按钮 -->
+    <% if( pagination.currentPage > 1 ) { %>
+        <a href="/admin/users?limite=<%= pagination.limit %>&offset=<%= (pagination.currentPage - 2) * pagination.limit %>" class="prev">&lt;&lt;</a>
+    <% } else { %>
+        <span class="disabled prev">&lt;&lt;</span>
+    <% } %>
+
+
+    <!-- 页码链接 -->
+    <% for (let i = pagination.startPage; i <= pagination.endPage; i++) { %>
+        <% if (i === pagination.currentPage) { %>
+            <span class="active"><%= i %></span>
+        <% } else { %>
+            <a href="/admin/users?limite=<%= pagination.limit %>&offset=<%= (i - 1) * pagination.limit %>"><%= i %></a>
+        <% } %>
+    <% } %>
+
+    <!-- 下一页按钮 -->
+    <% if (pagination.currentPage < pagination.endPage) { %>
+        <a href="/admin/users?limite=<%= pagination.limit %>&offset=<%= pagination.currentPage * pagination.limit %>" class="next">&gt;&gt;</a>
+    <% } else { %>
+        <span class="disabled next">&gt;&gt;</span>
+    <% } %>
+</div>

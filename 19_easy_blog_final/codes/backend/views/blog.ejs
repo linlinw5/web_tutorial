@@ -1,0 +1,45 @@
+<%- include('./partial/header.ejs') %>
+
+<%
+// 将字符串转换为 Date 对象并格式化，这一段代码是服务器上执行的，客户端看不到这段代码
+function formatDate (dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+    });
+}
+%>
+
+<div id="container" class="container">
+
+    <div class="blogContent">
+        <div><a href="/">&laquo; Back to Home</a></div>
+        
+        <h1><%= blog.title %></h1>
+        <div class="authorInfo">
+            <div class="avatar">
+                <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="authorName">
+                <strong><%= blog.username %></strong>
+            </div>
+            <div class="date">
+                <%= formatDate(blog.created_at) %>
+            </div>
+        </div>
+
+        <ul class="tags">
+            <% blogTags.forEach(tag => {%>
+                <li class="tag_<%= tag.id %>"><%= tag.name %> </li>
+            <% }) %>
+        </ul>
+        <div class="mainContent">
+            <div class="imageDiv"><img src="<%= blog.img %>" alt="image"></div>
+            <p><%= blog.content %></p>
+        </div>
+    </div>
+    
+</div>
+<%- include('./partial/footer.ejs') %>

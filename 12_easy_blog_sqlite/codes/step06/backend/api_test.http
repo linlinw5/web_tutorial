@@ -1,0 +1,48 @@
+@BASE_URL = http://localhost:3000
+
+### Get All Blogs
+GET {{BASE_URL}}/api/blogs?limit=3&offset=0
+Accept: application/json
+
+
+### Get a Blog By Id
+GET {{BASE_URL}}/api/blogs/2
+Accept: application/json
+
+
+### Get Blogs By Tag Id
+GET {{BASE_URL}}/api/blogs/tag/1
+Accept: application/json
+
+
+### Create a Blog
+POST {{BASE_URL}}/api/blogs
+Content-Type: application/json
+
+{
+    "title": "People knowledge enjoy truth reason",
+    "content": "We value ideas that spread easily. That’s how the internet became such a transformative place.",
+    "img": "/images/default.png",
+    "published": true,
+    "user_id": 1,
+    "tags": [1, 2, 3]
+}
+
+
+### Delete a Blog By Id
+DELETE {{BASE_URL}}/api/blogs/61
+Accept: application/json
+
+
+### Update a Blog By Id
+PATCH {{BASE_URL}}/api/blogs/60
+Content-Type: application/json
+
+{
+    "title": "Updated People knowledge enjoy truth reason",
+    "content": "Updated We value ideas that spread easily. That’s how the internet became such a transformative place.",
+    "img": "/images/default.png",
+    "published": true,
+    "user_id": 1,
+    "tags": [1, 2, 3]
+}

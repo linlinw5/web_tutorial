@@ -1,0 +1,20 @@
+{
+  "name": "02_express_api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "concurrently \"tsc -w\" \"nodemon ./dist/app.js\""
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.0.0"
+  }
+}

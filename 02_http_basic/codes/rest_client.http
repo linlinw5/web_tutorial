@@ -1,0 +1,64 @@
+# REST Client test file
+# After installing the REST Client extension in VSCode, click "Send Request" above a request to send it
+# Each ### separates a request block
+
+# ─────────────────────────────────────────────
+# server_01 / server_02 / server_03 / server_04
+# ─────────────────────────────────────────────
+
+### Basic GET request
+GET http://localhost:3000/
+
+### GET request with query parameters (use with server_03 to observe URL parsing)
+GET http://localhost:3000/?id=1&name=zhangsan
+
+
+# ─────────────────────────────────────────────
+# server_05: full route tests
+# ─────────────────────────────────────────────
+
+### Home page
+GET http://localhost:3000/
+
+### /test - GET request
+GET http://localhost:3000/test
+
+### /test - POST request
+POST http://localhost:3000/test
+
+### /test - DELETE request (should return 405)
+DELETE http://localhost:3000/test
+
+### /users - get all users (HTML)
+GET http://localhost:3000/users
+
+### /user - missing id parameter (should return 400)
+GET http://localhost:3000/user
+
+### /user - query an existing user
+GET http://localhost:3000/user?id=1
+
+### /user - query a non-existent user (should return 404)
+GET http://localhost:3000/user?id=99
+
+### /api/users - get all users (JSON)
+GET http://localhost:3000/api/users
+
+### /api/user - query an existing user (JSON)
+GET http://localhost:3000/api/user?id=2
+
+### /api/user - query a non-existent user (JSON, should return 404)
+GET http://localhost:3000/api/user?id=99
+
+### /admin - no authentication (should return 403)
+GET http://localhost:3000/admin
+
+### /admin - authenticate via query parameter
+GET http://localhost:3000/admin?password=Cisco123
+
+### /admin - authenticate via request header
+GET http://localhost:3000/admin
+Authorization: Bearer Cisco123
+
+### Non-existent route (should return 404)
+GET http://localhost:3000/shopping

@@ -1,0 +1,1 @@
+export const container = document.querySelector("#container") as HTMLElement;

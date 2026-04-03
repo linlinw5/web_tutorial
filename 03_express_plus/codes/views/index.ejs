@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+    <div class="blogGrid">
+        <% for (let blog of blogs) { %>
+            <div class="blogCard">
+                <div class="image"><img src="<%= blog.image %>" alt=""></div>
+                <div class="content">
+                    <p><%= blog.created_at %></p>
+                    <h2><a href="/blog?id=<%= blog.id %>"><%= blog.title %></a></h2>
+                    <hr>
+                    <p><%= blog.content.slice(0, 100) %></p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

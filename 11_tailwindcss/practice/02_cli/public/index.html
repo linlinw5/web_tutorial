@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CLI Practice</title>
+    <!-- Import compiled CSS (generate it first with npm run dev) -->
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body>
+    <!--
+        Practice goal: implement the following layout using Tailwind utility classes
+
+        1. Use a vertical flex layout on body, with min-height covering the full screen
+        2. Header: green background, white text, 16px padding
+           - Title should be text-sm on mobile, text-xl on medium screens and above
+        3. Middle section: horizontal flex layout filling remaining space
+           - Left aside: fixed width 256px, yellow background, vertical navigation menu
+           - Right main: flex-1, 16px padding, place some content cards
+        4. Footer: dark gray background, white text, centered
+        5. Define .btn-primary with @apply in input.css and use it on this page
+    -->
+
+    <header>
+      <h1>My Website</h1>
+    </header>
+
+    <div>
+      <aside>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+        </nav>
+      </aside>
+
+      <main>
+        <h2>Main Content Area</h2>
+        <p>Place content here.</p>
+        <button>Regular Button</button>
+        <button class="btn-primary">Custom Button</button>
+      </main>
+    </div>
+
+    <footer>
+      <p>All Rights Reserved &copy; 2024</p>
+    </footer>
+  </body>
+</html>

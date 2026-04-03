@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API Example</title>
+    <style>
+      .section {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fetch API Example</h1>
+    <p>
+      This example fetches user data from <a href="http://localhost:3000" target="_blank">Mock API Server</a>. Please
+      start <code>00_mock_api</code> first.
+    </p>
+
+    <button id="loadBtn">Load User List</button>
+
+    <div class="section">
+      <p>Native HTML form submission (application/x-www-form-urlencoded):</p>
+      <form action="http://localhost:3000/api/users" method="POST">
+        <input type="text" name="name" placeholder="Username" />
+        <input type="text" name="email" placeholder="Email" />
+        <button type="submit">Add User</button>
+      </form>
+    </div>
+
+    <div class="section">
+      <p>Fetch submission (two request body formats):</p>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="text" id="email" placeholder="Email" />
+      <button id="addJSON">Add User - JSON</button>
+      <button id="addWWW">Add User - www-form</button>
+    </div>
+
+    <div class="section">
+      <p>User List:</p>
+      <ul id="userList"></ul>
+    </div>
+
+    <div class="section">
+      <p>System Message:</p>
+      <div id="message"></div>
+    </div>
+
+    <script src="./dist/script.js"></script>
+  </body>
+</html>
